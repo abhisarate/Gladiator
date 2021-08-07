@@ -34,6 +34,8 @@ constraint subid_fk foreign key(subid)
 REFERENCES subjects(subid) on delete cascade
 );
 
+
+
 create or REPLACE Trigger trg_questions
 before insert 
 on Questions
@@ -68,3 +70,27 @@ Insert into Answers values(1,101,'try-catch');
 Insert into Answers values(2,101,'checked Exception');
 commit;
 select * from Questions q , Answers a where (q.qid=a.qid and q.answer=a.answer);
+
+CREATE TABLE  adminlog(
+    A_ID  INT PRIMARY KEY,
+    A_NAME VARCHAR(20) NOT NULL,
+    A_EMAIL VARCHAR(30) NOT NULL, 
+    A_PASSWORD VARCHAR(20) NOT NULL
+)
+
+INSERT INTO adminlog VALUES (101, 'ajay','ajay123@gmail.com', 'ajay123');
+INSERT INTO adminlog VALUES (102, 'vijay','vijay123@gmail.com', 'vijay123');
+
+SELECT * FROM adminlog
+
+CREATE TABLE scorecard(
+    S_ID  INT PRIMARY KEY,
+    S_NAME VARCHAR(25) NOT NULL,
+    SUB_ID VARCHAR(20) NOT NULL,
+    MARKS INT
+)
+
+INSERT INTO scorecard VALUES(1001,'Sanjay','JAVA',10);
+
+SELECT * FROM scorecard
+
