@@ -36,6 +36,9 @@ REFERENCES subjects(subid) on delete cascade
 
 
 
+
+
+
 create or REPLACE Trigger trg_questions
 before insert 
 on Questions
@@ -94,3 +97,20 @@ INSERT INTO scorecard VALUES(1001,'Sanjay','JAVA',10);
 
 SELECT * FROM scorecard
 
+
+
+
+
+create table STUDENT_LOGIN(
+S_ID  INT PRIMARY KEY,
+S_EMAIL VARCHAR(20) NOT NULL,
+S_NAME VARCHAR(25) NOT NULL,
+S_PASSWORD  VARCHAR(20) NOT NULL
+);
+
+Insert into  STUDENT_LOGIN values(1001,'sabhi@gmail.com','Abhijeet','Abhi@3456');
+Insert into  STUDENT_LOGIN values(1002,'vashishta@gmail.com','Vashishta','Vashi@3456');
+Insert into  STUDENT_LOGIN values(1003,'prachi@gmail.com','Prachi','Prachi@3456');
+Insert into  STUDENT_LOGIN values(1004,'akash@gmail.com','Akash','Akash@3456');
+
+select * from student_login;
